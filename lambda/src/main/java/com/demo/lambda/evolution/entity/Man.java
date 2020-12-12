@@ -1,5 +1,10 @@
 package com.demo.lambda.evolution.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
 public class Man {
     private String name;
     private int age;

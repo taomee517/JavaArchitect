@@ -1,5 +1,2 @@
 dependencies {
-    // lombok
-    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.10'
-    annotationProcessor "org.projectlombok:lombok"
 }
