@@ -5,7 +5,7 @@
     <!-- 全局参数 -->
     <Properties>
         <property name="FILE_PATH" value="log/log4j2" />
-        <Property name="APP_NAME">java-architect-lambda</Property>
+        <Property name="APP_NAME">java-architect-webflux</Property>
         <Property name="STDOUT_PATTERN">%d{yyyy-MM-dd HH:mm:ss,SSS} | %style{%-5level}{highlight,green} | %style{%t}{blue} | %style{%c{1.}:%L}{yellow} | %m%n</Property>
 <!--        <Property name="RDB_PATTERN">%d{yyyy-MM-dd HH:mm:ss,SSS}|${sys:local-ip}|%level|%t|%c|%m%n</Property>-->
     </Properties>
@@ -40,6 +40,10 @@
         </RollingFile>
     </Appenders>
     <Loggers>
+       <!-- additivity属性作用是在使用当前Logger配置的Appender打印日志 -->
+        <Logger name="org.springframework" level="INFO" />
+        <Logger name="io.netty" level="INFO" />
+
        <!-- Root表示所有Logger用Root中的Appender打印日志  -->
        <Root level ="INFO" >
         <AppenderRef ref="ERROR"></AppenderRef>

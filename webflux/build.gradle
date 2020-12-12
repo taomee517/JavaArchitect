@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.3.5.RELEASE")
+        classpath("io.spring.gradle:dependency-management-plugin:1.0.9.RELEASE")
+    }
+}
+
+apply plugin: "java"
+apply plugin: "application"
+apply plugin: 'org.springframework.boot'
+apply plugin: "io.spring.dependency-management"
+
+group 'org.demo'
+version '1.0'
+
+repositories {
+    mavenLocal()
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-webflux") {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+        exclude group: 'com.fasterxml.jackson.core', module: 'jackson-databind'
+    }
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2'
+
+    testCompile group: 'io.projectreactor', name: 'reactor-test'
+}
