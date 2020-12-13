@@ -8,7 +8,7 @@ import java.util.function.Function;
 @Slf4j
 public class FunctionCase {
     public static void main(String[] args) {
-        /* Consumer 有输入，也有输出，第一个泛型是参数值类型， 第二个泛型是返回值类型 */
+        /* Function 有输入，也有输出，第一个泛型是参数值类型， 第二个泛型是返回值类型 */
         Function<Integer, String> regret = year -> StringUtils.join("Hello！", year);
         String yearRegret = regret.apply(2021);
         System.out.println(yearRegret);

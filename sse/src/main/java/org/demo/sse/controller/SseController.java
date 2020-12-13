@@ -13,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 @Slf4j
@@ -55,8 +56,9 @@ public class SseController {
     @RequestMapping(value = "flux", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<String> sseFlux() throws Exception{
         log.info("sseFlux handle start");
-        List<Integer> collect = Stream.iterate(0, i -> i + 1)
-                .limit(11).collect(Collectors.toList());
+//        List<Integer> collect = Stream.iterate(0, i -> i + 1)
+//                .limit(11).collect(Collectors.toList());
+        List<Integer> collect = IntStream.range(0, 12).boxed().collect(Collectors.toList());
         Flux<String> stringFlux = Flux.fromStream(collect.stream()
                 .map(i -> sleepAndReturn(1, i)));
         log.info("sseFlux handle end");

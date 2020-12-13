@@ -2,7 +2,11 @@
 /.idea/
 /.gradle/
 /log/
+/logs/
 /src/
 /lambda/build/
 /lambda/build/classes/java/main/
 /lambda/build/classes/java/test/
+
+/webflux/build/
+/sse/build/
