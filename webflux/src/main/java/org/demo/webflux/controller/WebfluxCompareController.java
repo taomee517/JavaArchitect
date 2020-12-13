@@ -66,7 +66,7 @@ public class WebfluxCompareController {
 
     @GetMapping(value = "sseWait", produces = "text/event-stream")
     public Flux<String> sseWait(){
-        /* 模拟flux耗时操作 */
+        /* SSE-Server Sent Event 服务端推送事件 */
         log.info("sseWait handle start");
         Flux<String> flux = Flux.fromStream(getInterestsList().stream().map(s -> sleep(StringUtils.join("Interest-", s))));
         log.info("sseWait handle end");
