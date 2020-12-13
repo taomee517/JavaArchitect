@@ -2,4 +2,5 @@ rootProject.name = 'JavaArchitect'
 include 'lambda'
 include 'webflux'
 include 'sse'
+include 'reactive-stream'
 
