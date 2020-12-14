@@ -3,4 +3,5 @@ include 'lambda'
 include 'webflux'
 include 'sse'
 include 'reactive-stream'
+include 'router-function'
 
