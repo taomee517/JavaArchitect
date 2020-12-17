@@ -1,5 +1,4 @@
-SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
+SET FOREIGN_KEY_CHECKS = 1;
 
 -- ----------------------------
 -- Table structure for tb_book
@@ -16,5 +15,4 @@ CREATE TABLE `tb_book`  (
 -- Records of tb_book
 -- ----------------------------
 INSERT INTO `tb_book` VALUES (1, '围城', '钱钟书');
-
-SET FOREIGN_KEY_CHECKS = 1;
+INSERT INTO `tb_book` VALUES (2, '货币战争', '宋鸿兵');

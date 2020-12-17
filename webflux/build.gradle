@@ -35,10 +35,14 @@ dependencies {
         exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
     }
 
+    compile("org.springframework.boot:spring-boot-starter-data-redis-reactive") {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+
     compile group: 'dev.miku', name: 'r2dbc-mysql', version: '0.8.2.RELEASE'
 
     //仅用于运行schema.sql
-    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.21'
+//    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.21'
 
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2'
 

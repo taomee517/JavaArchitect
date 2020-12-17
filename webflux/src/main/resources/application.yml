@@ -4,15 +4,21 @@ server:
 
 spring:
   r2dbc:
-    url: r2dbcs:mysql://127.0.0.1:3306/db_webflux?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8
+    url: r2dbcs:mysql://127.0.0.1:3306/db_webflux?useUnicode=true&characterEncoding=utf8&serverZoneId=Asia/Shanghai&useSSL=false
     username: root
     password: 123456
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
 
     ## 运行schema失败
 #  datasource:
 #    username: root
 #    password: 123456
-#    url: jdbc:mysql://127.0.0.1:3306/db_webflux
 #    driver-class-name: com.mysql.cj.jdbc.Driver
-#    schema: schema.sql
-#    initialization-mode: always
+#    url: jdbc:mysql://localhost:3306/db_webflux
+#    schema:
+#      - classpath:sql/schema.sql
+#    initialization-mode: ALWAYS
+

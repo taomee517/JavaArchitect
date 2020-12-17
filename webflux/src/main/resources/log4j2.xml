@@ -43,6 +43,7 @@
        <!-- additivity属性作用是在使用当前Logger配置的Appender打印日志 -->
         <Logger name="org.springframework" level="INFO" />
         <Logger name="io.netty" level="INFO" />
+        <logger name="io.lettuce.core.protocol" level="ERROR"/>
 
        <!-- Root表示所有Logger用Root中的Appender打印日志  -->
        <Root level ="INFO" >

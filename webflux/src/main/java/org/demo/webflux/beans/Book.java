@@ -4,6 +4,8 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
+import java.io.Serializable;
+
 /**
  * Book
  *
@@ -14,7 +16,7 @@ import org.springframework.data.relational.core.mapping.Table;
 
 @Data
 @Table(value = "tb_book")
-public class Book {
+public class Book implements Serializable {
 
     @Id
     private Long id;
