@@ -11,8 +11,6 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 @Component
 public class DeviceRouter {
 
-
-
     //用于将请求路由到指定的处理器类
     @Bean
     RouterFunction<ServerResponse> customRouter(DeviceHandler deviceHandler){
@@ -20,6 +18,8 @@ public class DeviceRouter {
                 //相当于普通springboot的@RequestMapping("/device")
                 .nest(RequestPredicates.path("/device"),
                 //相当于普通springboot的@GetMapping("/all")
-                RouterFunctions.route(RequestPredicates.GET("/all"), deviceHandler::findAllHandler));
+                RouterFunctions.route(RequestPredicates.GET("/all"), deviceHandler::findAllHandler)
+                    .andRoute(RequestPredicates.GET("/{id}"), deviceHandler::findByIdHandler)
+                    .andRoute(RequestPredicates.POST("/save"), deviceHandler::saveHandler));
     }
 }

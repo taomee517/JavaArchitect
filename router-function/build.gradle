@@ -24,6 +24,7 @@ repositories {
     mavenLocal()
     maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     mavenCentral()
+    maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/'}
 }
 
 dependencies {
@@ -37,5 +38,10 @@ dependencies {
         exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
     }
 
+    compile group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+
     testCompile group: 'io.projectreactor', name: 'reactor-test'
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test'){
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
 }

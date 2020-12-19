@@ -18,6 +18,6 @@ public class Device {
     String _id;
     String UUID;
     long SENSOR_TYPE;
-    Date TIME_JOIN;
     String MAC;
+    Date TIME_JOIN;
 }

@@ -6,6 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories;
 
+/**
+ * Github webflux example: https://github.com/jittagornp/spring-boot-reactive-example
+ */
 @EnableR2dbcRepositories
 @SpringBootApplication
 public class WebFluxApplication {
