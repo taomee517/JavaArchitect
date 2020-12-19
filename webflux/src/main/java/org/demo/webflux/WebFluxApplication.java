@@ -1,5 +1,6 @@
 package org.demo.webflux;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -13,5 +14,8 @@ public class WebFluxApplication {
                 .web(WebApplicationType.REACTIVE)
                 .sources(WebFluxApplication.class)
                 .run(args);
+
+        //common run
+//        SpringApplication.run(WebFluxApplication.class);
     }
 }
