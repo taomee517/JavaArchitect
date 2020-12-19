@@ -1,22 +1,17 @@
 package org.demo.routerfunction.handler;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 import org.apache.commons.lang3.StringUtils;
 import org.demo.routerfunction.beans.Device;
 import org.demo.routerfunction.repository.DeviceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
 //处理器类
-@Api
+
 @Component
 public class DeviceHandler {
 

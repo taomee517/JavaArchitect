@@ -23,13 +23,14 @@ public class SwaggerConfig {
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(new ApiInfoBuilder()
-                        .description("webflux example api")
-                        .title("webflux example api")
+                        .description("webflux example")
+                        .title("Webflux Example API")
                         .version("1.0.0")
                         .build())
                 .select()
+                .apis(RequestHandlerSelectors.any())
                 // 必须加Api注解才能生效
-                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
+//                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
                 // 指定controller处理类的package路径
 //                .apis(RequestHandlerSelectors.basePackage("org.demo.routerfunction.controller"))
                 .paths(PathSelectors.any())
