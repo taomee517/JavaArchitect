@@ -25,4 +25,12 @@ public class DeviceService {
         return deviceMono.doOnNext(device -> repository.save(device).subscribe())
                 .thenEmpty(Mono.empty());
     }
+
+    public Mono<Void> deleteDeviceById(String id) {
+        return repository.deleteById(id);
+    }
+
+    public Mono<Void> edit(Mono<Device> upd) {
+        return upd.flatMap(updDevice -> repository.save(updDevice).then());
+    }
 }
