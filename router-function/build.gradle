@@ -19,7 +19,6 @@ apply plugin: "io.spring.dependency-management"
 
 group 'org.demo'
 version '1.0'
-def springDocVersion = '1.5.2'
 
 repositories {
     mavenLocal()
@@ -40,11 +39,7 @@ dependencies {
     }
 
     /* swagger */
-//    compile group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
-
-    /* springdoc openapi*/
-    compile group: 'org.springdoc', name: 'springdoc-openapi-webflux-ui', version: "${springDocVersion}"
-//    compile group: 'org.springdoc', name: 'springdoc-openapi-security', version: "${springDocVersion}"
+    compile group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
 
     testCompile group: 'io.projectreactor', name: 'reactor-test'
     testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test'){
