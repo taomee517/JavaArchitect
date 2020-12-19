@@ -1,11 +1,11 @@
 package org.demo.routerfunction;
 
 import org.demo.routerfunction.beans.Device;
-import org.demo.routerfunction.repository.DeviceRepository;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
+import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 
 
@@ -13,12 +13,15 @@ import reactor.core.publisher.Flux;
 @SpringJUnitWebConfig
 public class RouterTest5 {
 
-    @Autowired
-    DeviceRepository deviceRepository;
+    private  WebClient client = WebClient.create("http://localhost:9327");
 
     @Test
     public void deviceTest(){
-        Flux<Device> all = deviceRepository.findAll();
-        all.log().doOnNext(device -> System.out.println(device)).subscribe();
+        Flux<Device> all = client.get().uri("/device/all")
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve().bodyToFlux(Device.class);
+        all.map(device -> device.getMAC())
+                .doOnNext(System.err::println)
+                .blockLast();
     }
 }
