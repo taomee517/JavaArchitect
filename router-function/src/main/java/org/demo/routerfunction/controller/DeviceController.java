@@ -1,6 +1,5 @@
 package org.demo.routerfunction.controller;
 
-import io.swagger.annotations.Api;
 import org.demo.routerfunction.beans.Device;
 import org.demo.routerfunction.repository.DeviceRepository;
 import org.springframework.beans.factory.annotation.Autowired;

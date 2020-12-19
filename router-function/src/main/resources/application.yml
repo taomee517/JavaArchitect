@@ -6,3 +6,9 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/HardwarePlatform
+
+springdoc:
+  version: '1.0.0'
+  swagger-ui:
+    enable: true
+    path: /swaager-ui.html
